@@ -62,3 +62,20 @@ npm run build    # 构建到 dist/
 图片 / 视频生成后，用访客授权的 `session.prompt.fullaccess` 调 Space Agent 下载并写入
 `generated-assets/<capability>/`，同时更新 `generated-assets/manifest.json`。Web / Deck 由 Agent
 直接在 `generated-projects/<capability>/` 下创建可交付文件。owner token 不进前端。
+
+## 发布（必须用 publish.sh）
+
+```bash
+./publish.sh
+```
+
+不要直接跑 `cohub works publish`。省略 `--work-scope` / `--viewer-scope` 时，平台会把
+`workScopes` 和 `allowedViewerScopes` **覆盖成空数组**，前端调 `client.auth.request()`
+就会失败并报 `No allowed scopes requested`，所有生成能力全挂。
+
+`publish.sh` 每次都显式带上：
+
+- workScopes：`space.view` `session.view` `taskrun.view`
+- allowedViewerScopes：`generation.create` `session.prompt.fullaccess`
+
+并在发布后校验 viewer scope 是否到位，缺失就以非零码退出。
