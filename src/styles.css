@@ -1252,3 +1252,7 @@ button {
 
 /* archiving runs after the media is already visible — badge, not a blocking overlay */
 .archiving-badge { position: absolute; left: 14px; bottom: 14px; z-index: 4; display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px; background: rgb(29 30 28 / 82%); color: #f4f3ee; font: 10px "Courier New", monospace; backdrop-filter: blur(6px); }
+
+/* brief field header: label + "写一个" action on one row */
+.brief-field .brief-head { margin-bottom: 7px; }
+.copy-error { margin: 7px 0 0; color: #b4402f; font: 10px/1.5 "Courier New", monospace; }

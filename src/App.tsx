@@ -12,6 +12,7 @@ import {
   Film,
   Image as ImageIcon,
   LayoutDashboard,
+  Dices,
   LoaderCircle,
   Palette,
   Presentation,
@@ -22,7 +23,6 @@ import {
 import {
   accents,
   anchors,
-  fallbackPhrase,
   layouts,
   moods,
   randomRecipe,
@@ -103,6 +103,28 @@ const stageLabel: Record<Stage, string> = {
   archiving: "Saving to Space",
   done: "Saved to Space",
   error: "Needs attention",
+};
+
+// House voice for generated briefs: concrete scenes, not marketing register.
+const COPY_SYSTEM_PROMPT = [
+  "你是一个中文创作命题作者，为一个安静、克制的视觉工作室写创作命题。",
+  "规则：",
+  "1. brief 是一个具体的场景或瞬间，不是抽象概念。写看得见的东西：地点、时间、天气、一个动作。",
+  "2. brief 控制在 8 到 20 个汉字，不要用标点结尾。",
+  "3. 禁止营销腔和口号腔，不要“赋能”“沉浸式”“探索无限可能”这类词。",
+  "4. 不要堆形容词，用事实让情绪自己出现。",
+  "5. phrase 是印在画面上的一行字：英文全大写，2 到 5 个词，不要句号。",
+  "6. phrase 不是 brief 的直译，它是另一个角度的旁白。",
+  "好例子：brief=“雨天里快要打烊的旧书店”，phrase=“THE RAIN REMEMBERS”。",
+  "坏例子：brief=“探索城市美学的无限可能”，抽象且是营销腔。",
+].join("\n");
+
+const copyTaskByCapability: Record<CapabilityId, string> = {
+  poster: "写一个适合做成安静艺术海报的场景命题。",
+  card: "写一个适合做成横版生活方式卡片的场景命题，偏日常与呼吸感。",
+  motion: "写一个适合拍成 5 秒短片的场景命题，要有一个可见的动作或变化。",
+  web: "写一个适合做成网页首页的项目命题，说清是给谁做的什么站点。",
+  deck: "写一个适合做成演示文稿的主题命题，说清要向谁讲什么。",
 };
 
 // Failure classification absorbed from shanyue production daily-reports.
@@ -190,6 +212,50 @@ async function resolveGenerationModel(preferred: string) {
   return model.model;
 }
 
+// Copy writing runs on a fast text model so the button stays responsive.
+// Order is from measured latency + output quality against the real prompt:
+// claude-sonnet-5 ~2s, deepseek-v4-flash 5-11s. Both gemini entries currently
+// 502 on this endpoint ("abortSignal.addEventListener is not a function") and
+// qwen3.7-plus returns empty content, so neither is listed.
+const COPY_MODEL_PREFERENCE = [
+  "claude-sonnet-5",
+  "deepseek-v4-flash",
+  "glm-5.2",
+  "gpt-5.6-luna",
+];
+
+async function resolveCopyModel() {
+  const catalog = await client.models.list();
+  const entries = Object.values(catalog).flat();
+  const ids = new Set(entries.map((entry) => entry.id));
+  const preferred = COPY_MODEL_PREFERENCE.find((id) => ids.has(id));
+  if (preferred) return preferred;
+  const first = entries[0]?.id;
+  if (!first) throw new Error("当前没有可用的文本模型。");
+  return first;
+}
+
+/** Pull the first JSON object out of a model reply, tolerating code fences and prose. */
+function parseCopyReply(raw: string) {
+  const fenced = raw.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  const candidate = (fenced?.[1] ?? raw).trim();
+  const start = candidate.indexOf("{");
+  const end = candidate.lastIndexOf("}");
+  if (start === -1 || end <= start) return null;
+  try {
+    const parsed = JSON.parse(candidate.slice(start, end + 1)) as {
+      brief?: unknown;
+      phrase?: unknown;
+    };
+    const brief = typeof parsed.brief === "string" ? parsed.brief.trim() : "";
+    const phrase = typeof parsed.phrase === "string" ? parsed.phrase.trim() : "";
+    if (!brief) return null;
+    return { brief, phrase };
+  } catch {
+    return null;
+  }
+}
+
 async function waitForTurn(
   space: ReturnType<typeof client.space>,
   sessionId: string,
@@ -249,6 +315,8 @@ function App() {
   const [copied, setCopied] = useState(false);
   const [showPrompt, setShowPrompt] = useState(false);
   const [archivePath, setArchivePath] = useState("");
+  const [copyBusy, setCopyBusy] = useState(false);
+  const [copyError, setCopyError] = useState("");
 
   const generatedPrompt = useMemo(() => {
     switch (capId) {
@@ -291,12 +359,76 @@ function App() {
   const updateRecipe = (key: keyof Recipe, value: string) => setRecipe((c) => ({ ...c, [key]: value } as Recipe));
   const updateStory = (key: keyof MotionStory, value: string) => setStory((c) => ({ ...c, [key]: value }));
 
-  const shuffle = () => {
-    const next = randomRecipe(recipe);
-    setRecipe(next);
-    if (capId === "poster" && (!phrase.trim() || moods.some((m) => m.phrase === phrase))) {
-      setPhrase(fallbackPhrase(next.mood));
+  /**
+   * Ask a text model for a fresh brief (and short line where the capability uses one).
+   * Runs on the backend via the space completion endpoint so the copy is genuinely
+   * new each time instead of cycling a hardcoded list.
+   */
+  const writeCopy = async () => {
+    if (copyBusy) return;
+    setCopyBusy(true);
+    setCopyError("");
+    try {
+      const approved = await client.auth.request({
+        scopes: ["session.prompt.fullaccess"],
+        reason: "用后端模型为你写一组新的创作命题。",
+      });
+      if (!approved) {
+        setCopyError("需要授权才能让后端帮你写文案。");
+        return;
+      }
+      const spaceId = await getSpaceId();
+      if (!spaceId) throw new Error("无法识别当前 Works 空间。");
+      const model = await resolveCopyModel();
+      const wantsPhrase = capId === "poster" || capId === "card";
+      const result = await client.space(spaceId).completion({
+        model,
+        temperature: 1,
+        maxTokens: 400,
+        thinkingLevel: "off",
+        messages: [
+          {
+            role: "system",
+            content: [{ type: "text", text: COPY_SYSTEM_PROMPT }],
+          },
+          {
+            role: "user",
+            content: [
+              {
+                type: "text",
+                text: [
+                  copyTaskByCapability[capId],
+                  `随机种子：${Math.random().toString(36).slice(2, 10)}（用它让结果与往次不同）。`,
+                  `避开这个已有的命题：“${brief.trim() || "（空）"}”。`,
+                  wantsPhrase
+                    ? '返回 JSON：{"brief": "...", "phrase": "..."}'
+                    : '返回 JSON：{"brief": "..."}',
+                  "只输出 JSON，不要任何解释。",
+                ].join("\n"),
+              },
+            ],
+          },
+        ],
+      });
+      const text = result.message.content
+        .map((block) => (block.type === "text" ? block.text : ""))
+        .join("")
+        .trim();
+      const parsed = parseCopyReply(text);
+      if (!parsed) throw new Error("模型返回的内容无法解析。再试一次。");
+      setBrief(parsed.brief.slice(0, 280));
+      if (wantsPhrase && parsed.phrase) setPhrase(parsed.phrase.slice(0, 48).toUpperCase());
+    } catch (caught) {
+      setCopyError(caught instanceof Error ? caught.message : String(caught));
+    } finally {
+      setCopyBusy(false);
     }
+  };
+
+  /** Remix everything: new copy from the model plus a new art direction. */
+  const remixAll = async () => {
+    setRecipe(randomRecipe(recipe));
+    await writeCopy();
   };
 
   const reset = () => chooseCapability("poster");
@@ -569,11 +701,24 @@ function App() {
               </div>
               <p className="cap-description">{cap.description}</p>
 
-              <label className="field brief-field">
-                <span>WHAT ARE WE MAKING?</span>
-                <textarea value={brief} onChange={(e) => setBrief(e.target.value)} rows={4} maxLength={280} />
+              <div className="field brief-field">
+                <div className="subhead-row brief-head">
+                  <span id="brief-label">WHAT ARE WE MAKING?</span>
+                  <button type="button" onClick={writeCopy} disabled={copyBusy} aria-busy={copyBusy}>
+                    {copyBusy ? <LoaderCircle className="spin" size={14} /> : <Dices size={14} />}
+                    {copyBusy ? "正在写" : "随机一个"}
+                  </button>
+                </div>
+                <textarea
+                  aria-labelledby="brief-label"
+                  value={brief}
+                  onChange={(e) => setBrief(e.target.value)}
+                  rows={4}
+                  maxLength={280}
+                />
                 <small>{brief.length} / 280</small>
-              </label>
+                {copyError && <p className="copy-error" role="status">{copyError}</p>}
+              </div>
 
               {(capId === "poster" || capId === "card") && (
                 <label className="field">
@@ -585,7 +730,7 @@ function App() {
               {/* POSTER controls */}
               {capId === "poster" && (
                 <div className="poster-controls">
-                  <div className="subhead-row"><span>ART DIRECTION</span><button type="button" onClick={shuffle}><WandSparkles size={14} /> remix</button></div>
+                  <div className="subhead-row"><span>ART DIRECTION</span><button type="button" onClick={remixAll} disabled={copyBusy} aria-busy={copyBusy}>{copyBusy ? <LoaderCircle className="spin" size={14} /> : <WandSparkles size={14} />} remix</button></div>
                   <div className="layout-grid compact-layout">
                     {layouts.map((l) => (
                       <button key={l.id} type="button" className={`layout-option ${recipe.layout === l.id ? "selected" : ""}`} onClick={() => updateRecipe("layout", l.id)} title={l.label}>
