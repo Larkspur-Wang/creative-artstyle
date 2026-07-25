@@ -1,0 +1,1650 @@
+{
+  "library": "Studio_Styles",
+  "release": "V1",
+  "version": "1.0",
+  "catalog_contract": "selection-v1",
+  "updated_at": "2026-07-17",
+  "agent_entry": "AGENT_GUIDE.md",
+  "note": "External agents use this catalog to select an active style. Read execution only after confirmation.",
+  "selection_priority": [
+    "explicit named IP or visual style",
+    "visual medium and rendering constraints",
+    "culture and era",
+    "subject and intended use",
+    "genre and mood"
+  ],
+  "no_match_policy": "Do not force the nearest active style. Report no exact match, then inspect New_Styles/PENDING_REVIEW and label all fallback candidates as draft.",
+  "active_count": 33,
+  "styles": [
+    {
+      "internal_id": "AN-01",
+      "display_name": "清新动漫",
+      "name_en": "Clean Line Anime",
+      "style_key": "",
+      "series": "AN",
+      "status": "active",
+      "one_liner": "清透柔和的动漫插画：纤细铅笔感线条配合淡水彩明暗，画面轻盈、干净，人物与场景都带有温柔的空气感。",
+      "selection": {
+        "scope": "宽底座人物与叙事插画风格",
+        "portability": "高",
+        "visual_identity": [
+          "纤细、干净、带轻微铅笔质感的线条",
+          "淡水彩式上色与柔和渐变",
+          "低到中等对比，画面明亮通透",
+          "细节精致但不过度锐利"
+        ],
+        "adaptable": [
+          "人物身份、年龄、服装与世界观",
+          "现代、历史、校园、日常与轻幻想题材",
+          "冷暖配色和天气时间",
+          "单人、双人、群像及轻量场景"
+        ],
+        "best_for": [
+          "人物肖像与角色卡",
+          "人物关系图、漫画分镜与轻小说封面",
+          "日常、校园、旅行及轻幻想场景",
+          "需要清爽、温柔、青春或治愈感的叙事插画"
+        ],
+        "not_for": [
+          "不适合强硬厚重的油画质感",
+          "不适合极硬赛璐璐阴影或粗黑轮廓",
+          "不适合摄影写实、塑料 3D 和重度暗黑恐怖"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/AN-01.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/AN-01.png"
+      },
+      "refs": {
+        "card": "styles/AN/AN-01_clean-line-anime/card.json",
+        "execution": "styles/AN/AN-01_clean-line-anime/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "AN-02",
+      "display_name": "赛璐璐",
+      "name_en": "Cel Shading",
+      "style_key": "",
+      "series": "AN",
+      "status": "active",
+      "one_liner": "轮廓清楚、色块利落的赛璐璐动漫：以平涂颜色和硬边阴影塑造形体，动作、服装和画面信息都清晰易读。",
+      "selection": {
+        "scope": "宽底座动漫渲染风格",
+        "portability": "高",
+        "visual_identity": [
+          "清晰的动漫轮廓与分块造型",
+          "大面积平涂色块",
+          "边界明确的硬阴影",
+          "颜色干净，明暗层级较少"
+        ],
+        "adaptable": [
+          "人物、动物、物件和场景",
+          "从日常到幻想、科幻、动作等世界观",
+          "明亮、暗色或限色配色",
+          "静态立绘、动作画面、分镜和图标"
+        ],
+        "best_for": [
+          "动漫角色、立绘与表情",
+          "动作场景和漫画分镜",
+          "游戏角色、道具与场景概念",
+          "需要清晰轮廓和高可读性的视觉内容"
+        ],
+        "not_for": [
+          "不适合柔软水彩、朦胧空气感或无边缘厚涂",
+          "不适合摄影写实和细腻皮肤材质",
+          "若需求依赖复杂光影与自然渐变，本风格会显得过于平整"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/AN-02.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/AN-02.png"
+      },
+      "refs": {
+        "card": "styles/AN/AN-02_cel-shading/card.json",
+        "execution": "styles/AN/AN-02_cel-shading/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "AN-03",
+      "display_name": "美漫",
+      "name_en": "American Comics",
+      "style_key": "",
+      "series": "AN",
+      "status": "active",
+      "one_liner": "美国大众超级英雄漫画风格：人物结构结实、力量感明确，墨线、块面阴影和戏剧动作具有强冲击力，像主流美式英雄漫画的封面与分镜。",
+      "selection": {
+        "scope": "美国主流大众漫画视觉风格",
+        "portability": "中高",
+        "visual_identity": [
+          "美国主流超级英雄漫画式人物造型",
+          "结实清楚的肌肉、体积与力量结构",
+          "明确墨线、块面阴影和高冲击动作",
+          "漫画封面与连续分镜的强叙事感"
+        ],
+        "adaptable": [
+          "英雄、普通人物、反派、怪物与科幻角色",
+          "都市、犯罪、科幻、奇幻、战争和冒险题材",
+          "彩色、限色或黑白处理",
+          "封面、分镜、角色图和叙事场景"
+        ],
+        "best_for": [
+          "超级英雄、反派与动作人物",
+          "美国大众漫画封面和连续叙事分镜",
+          "都市犯罪、科幻、奇幻、战争与冒险场景",
+          "需要强体积、强动作和大众英雄漫画冲击力的内容"
+        ],
+        "not_for": [
+          "不等同于 Bande Dessinee 等欧洲漫画体系或复古欧漫",
+          "不适合纤细柔美的日系淡彩人物",
+          "不适合无轮廓柔光厚涂、可爱 Q 版或安静治愈绘本"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/AN-03.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/AN-03.png"
+      },
+      "refs": {
+        "card": "styles/AN/AN-03_american-comics/card.json",
+        "execution": "styles/AN/AN-03_american-comics/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "AN-04",
+      "display_name": "精致国漫",
+      "name_en": "Refined Manhua",
+      "style_key": "",
+      "series": "AN",
+      "status": "active",
+      "one_liner": "偏古风与国风题材的精致国漫插画：秀丽五官、利落柔和的线条与平滑明暗过渡，适合表现中国历史、架空王朝、仙侠、武侠、神话、宫廷等人物与叙事画面。",
+      "selection": {
+        "scope": "偏中国古风与国风题材的国漫人物与叙事插画风格",
+        "portability": "中",
+        "visual_identity": [
+          "国漫式精致人物五官与修长比例",
+          "柔和厚涂与平滑明暗过渡，线条存在感弱于赛璐璐",
+          "古典服饰、发丝和面部细节较精致",
+          "核心语境为中国历史、古风与国风题材"
+        ],
+        "adaptable": [
+          "中国历史、架空王朝、仙侠、武侠、神话、民俗、宫廷与现代国风转译",
+          "男女角色、双人关系、群像和场景",
+          "明亮浪漫、冷峻权谋或战斗氛围",
+          "角色卡、封面、叙事插图与场景图"
+        ],
+        "best_for": [
+          "古风、仙侠、武侠与中国幻想人物",
+          "人物关系图和言情/剧情封面",
+          "中国建筑、山水与国风叙事场景",
+          "需要精致五官与柔和体积感的国漫内容"
+        ],
+        "not_for": [
+          "核心是中国古风/国风题材，不自动匹配日本和风、泛东亚或东方 Project",
+          "不适合粗犷欧美漫画造型",
+          "不适合塑料 3D 或摄影写实",
+          "不适合纯水墨留白和极简平面图形"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/AN-04.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/AN-04.png"
+      },
+      "refs": {
+        "card": "styles/AN/AN-04_refined-manhua/card.json",
+        "execution": "styles/AN/AN-04_refined-manhua/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "AN-05",
+      "display_name": "柔光梦幻",
+      "name_en": "Dreamy Pastel",
+      "style_key": "",
+      "series": "AN",
+      "status": "active",
+      "one_liner": "以柔和连续过渡和低笔触感呈现的梦幻动漫插画：细柔线条仍然存在，但被柔光、轻雾与发光色彩弱化融合，画面平滑、朦胧而浪漫。",
+      "selection": {
+        "scope": "宽题材梦幻氛围风格",
+        "portability": "高",
+        "visual_identity": [
+          "平滑柔和的明暗和色彩过渡，几乎看不到明显厚涂笔触",
+          "保留细柔动漫线条，但避免硬黑轮廓",
+          "发光 bloom、轻雾和虚化光点",
+          "明亮的霓虹粉彩或梦幻渐变，五官精致但整体低硬度低锐度"
+        ],
+        "adaptable": [
+          "人物、动物、花卉、城市与幻想场景",
+          "恋爱、偶像、魔法、科幻梦境等题材",
+          "粉紫、青蓝、暖金等不同梦幻配色",
+          "头像、封面、海报、场景和氛围图"
+        ],
+        "best_for": [
+          "唯美人物、双人关系与偶像视觉",
+          "魔法、梦境、花园、夜景和轻科幻场景",
+          "专辑封面、小说封面和氛围海报",
+          "需要浪漫、迷离、发光或超现实感觉的内容"
+        ],
+        "not_for": [
+          "不适合需要硬朗轮廓和精确结构的技术内容",
+          "不适合粗粝现实主义、黑白线稿和极简矢量",
+          "不等同于 AN-01 的铅笔线与淡水彩纸感",
+          "不适合强调明显笔触、硬轮廓或锐利色块的需求",
+          "过多光晕可能损失道具细节与信息可读性"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/AN-05.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/AN-05.png"
+      },
+      "refs": {
+        "card": "styles/AN/AN-05_dreamy-pastel/card.json",
+        "execution": "styles/AN/AN-05_dreamy-pastel/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "AN-06",
+      "display_name": "厚线漫画",
+      "name_en": "Bold Line Comic",
+      "style_key": "",
+      "series": "AN",
+      "status": "active",
+      "one_liner": "粗黑轮廓配合平涂色块的现代漫画：表情夸张、动作直接，画面清楚、活泼，具有强烈的网络漫画和动画喜剧感。",
+      "selection": {
+        "scope": "宽底座卡通漫画风格",
+        "portability": "高",
+        "visual_identity": [
+          "厚实、干净的黑色轮廓",
+          "平涂赛璐璐色块与高反差阴影",
+          "夸张表情和清楚肢体语言",
+          "简化背景与图形化造型"
+        ],
+        "adaptable": [
+          "人物、动物、吉祥物、物件和简单场景",
+          "喜剧、日常、动作、科普与社交内容",
+          "不同主题配色与角色设定",
+          "漫画格、表情、贴图、海报和说明图"
+        ],
+        "best_for": [
+          "网络漫画与幽默剧情",
+          "表情包、角色贴图和社媒插画",
+          "动作人物、吉祥物和轻量叙事场景",
+          "需要表情清晰、信息直接、远看易读的内容"
+        ],
+        "not_for": [
+          "不适合含蓄写实的情绪表演",
+          "不适合无轮廓厚涂、水彩和摄影真实感",
+          "不适合依赖复杂材质与微妙光影的高级肖像"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/AN-06.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/AN-06.png"
+      },
+      "refs": {
+        "card": "styles/AN/AN-06_bold-line-comic/card.json",
+        "execution": "styles/AN/AN-06_bold-line-comic/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "AN-07",
+      "display_name": "复古网点漫画",
+      "name_en": "Retro Halftone Comic",
+      "style_key": "",
+      "series": "AN",
+      "status": "active",
+      "one_liner": "粗黑漫画线、半调网点与复古套色构成的印刷漫画风格：像旧漫画、潮流海报和丝网印刷品的结合，画面醒目、有年代感。",
+      "selection": {
+        "scope": "宽题材印刷海报与漫画风格",
+        "portability": "高",
+        "visual_identity": [
+          "粗黑墨线与夸张漫画造型",
+          "半调网点、套色偏移和丝网印刷质感",
+          "高对比、有限而醒目的配色",
+          "强图形构图与复古印刷气息"
+        ],
+        "adaptable": [
+          "人物、商品、动物、动作与符号",
+          "复古、时尚、音乐、都市、喜剧和反讽题材",
+          "不同限色方案",
+          "海报、封面、包装、社媒图和漫画画面"
+        ],
+        "best_for": [
+          "人物肖像与潮流角色",
+          "活动海报、专辑封面、包装与宣传图",
+          "漫画动作、幽默和反讽内容",
+          "需要复古、醒目、印刷颗粒与大众文化感的视觉"
+        ],
+        "not_for": [
+          "不适合柔和写实肖像和细腻水彩",
+          "不适合安静低对比的治愈场景",
+          "不适合需要真实材质和自然光影的产品展示"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/AN-07.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/AN-07.png"
+      },
+      "refs": {
+        "card": "styles/AN/AN-07_pop-art-manga/card.json",
+        "execution": "styles/AN/AN-07_pop-art-manga/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "AN-08",
+      "display_name": "惊悚线稿",
+      "name_en": "Horror Manga Ink",
+      "style_key": "",
+      "series": "AN",
+      "status": "active",
+      "one_liner": "高反差黑白恐怖漫画：密集排线、刮擦墨线与大片黑影制造不安，人物和空间会带有压迫、扭曲与心理惊悚感。",
+      "selection": {
+        "scope": "类型绑定的黑白惊悚漫画风格",
+        "portability": "中",
+        "visual_identity": [
+          "黑白或近乎单色的高反差墨稿",
+          "密集交叉排线与刮擦线条",
+          "大片黑影和强烈明暗断层",
+          "扭曲视角、压迫构图与不安细节"
+        ],
+        "adaptable": [
+          "人物、怪物、建筑、物件与叙事场景",
+          "恐怖、悬疑、犯罪、心理惊悚和怪谈",
+          "写实或夸张的人物比例",
+          "封面、漫画格、海报和概念图"
+        ],
+        "best_for": [
+          "恐怖人物、怪物和怪异物件",
+          "悬疑、犯罪、心理压迫和都市怪谈",
+          "黑白漫画分镜、小说封面和惊悚海报",
+          "需要线条密度与黑影制造情绪的内容"
+        ],
+        "not_for": [
+          "不适合明亮治愈、儿童可爱和浪漫唯美",
+          "不适合丰富彩色表现和柔和粉彩",
+          "密集线条会降低简洁信息图与商业产品的清晰度"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/AN-08.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/AN-08.png"
+      },
+      "refs": {
+        "card": "styles/AN/AN-08_horror-manga-ink/card.json",
+        "execution": "styles/AN/AN-08_horror-manga-ink/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "3D-01",
+      "display_name": "写实3D渲染",
+      "name_en": "Realistic 3D Render",
+      "style_key": "",
+      "series": "3D",
+      "status": "active",
+      "one_liner": "材质、光影和空间关系遵循真实世界规律的写实 3D 渲染：皮肤、金属、布料、玻璃及环境具有可信的体积、反射、阴影与尺度。",
+      "selection": {
+        "scope": "宽底座写实三维渲染风格",
+        "portability": "高",
+        "visual_identity": [
+          "符合真实世界尺度、透视与三维体积",
+          "金属、皮肤、布料、玻璃等材质反应可信",
+          "光源方向、阴影、反射和环境光符合物理逻辑",
+          "可以表现幻想主体，但渲染结果仍具有真实材质和光影"
+        ],
+        "adaptable": [
+          "人物、动物、产品、建筑和完整环境",
+          "现代、历史、幻想、科幻及写实题材",
+          "肖像、全身、动作与大场景",
+          "冷暖光、天气、时间与镜头风格"
+        ],
+        "best_for": [
+          "写实角色、怪物和数字人",
+          "产品概念、机械、建筑与空间展示",
+          "影视概念、游戏场景和电影感海报",
+          "需要真实材质、空间和灯光的题材"
+        ],
+        "not_for": [
+          "不适合赛璐璐化阴影和动漫材质",
+          "不适合玩具化、黏土化或毛绒化材质",
+          "不适合明确要求手绘笔触、纸张纹理或扁平图形",
+          "不因题材是幻想或科幻就失去写实标准"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/3D-01.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/3D-01.png"
+      },
+      "refs": {
+        "card": "styles/3D/3D-01_cg-render/card.json",
+        "execution": "styles/3D/3D-01_cg-render/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "3D-02",
+      "display_name": "三渲二游戏",
+      "name_en": "Cel-Shaded 3D Game",
+      "style_key": "",
+      "series": "3D",
+      "status": "active",
+      "one_liner": "三维体积与二次元表面的结合：角色和场景有真实空间与镜头，但材质和阴影经过赛璐璐化处理，像动漫游戏中的实时过场。",
+      "selection": {
+        "scope": "宽底座动漫三维游戏风格",
+        "portability": "高",
+        "visual_identity": [
+          "三维模型体积、透视与镜头",
+          "动漫化脸型、发型和角色比例",
+          "赛璐璐式分块阴影与干净材质",
+          "游戏角色渲染和实时动画感"
+        ],
+        "adaptable": [
+          "人物、怪物、道具、载具和场景",
+          "现代、幻想、科幻、校园与历史题材",
+          "立绘、动作、过场、卡面与环境",
+          "写实程度和色彩饱和度"
+        ],
+        "best_for": [
+          "二次元游戏角色和角色卡",
+          "战斗动作、剧情过场与宣传图",
+          "三维动漫场景、道具和怪物",
+          "希望兼具动漫审美与三维空间感的内容"
+        ],
+        "not_for": [
+          "不适合纯二维手绘线稿和水彩纸感",
+          "不适合摄影级写实人物",
+          "不适合极简平面、像素或版画内容"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/3D-02.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/3D-02.png"
+      },
+      "refs": {
+        "card": "styles/3D/3D-02_cel-shaded-3d-game/card.json",
+        "execution": "styles/3D/3D-02_cel-shaded-3d-game/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "3D-03",
+      "display_name": "Q版玩具",
+      "name_en": "Chibi Toy",
+      "style_key": "",
+      "series": "3D",
+      "status": "active",
+      "one_liner": "圆润、简化、像收藏摆件的 Q 版三维风格：大头小身体、几何造型和柔和哑光材质，让任何角色或物件都更亲切可爱。",
+      "selection": {
+        "scope": "高迁移的 Q 版造型转译风格",
+        "portability": "高",
+        "visual_identity": [
+          "Q 版大头小身体或明显简化比例",
+          "圆角几何造型与低攻击性轮廓",
+          "柔和哑光材质和棚拍式光照",
+          "收藏玩具、手办或盲盒陈列感"
+        ],
+        "adaptable": [
+          "人物、动物、怪物、食物、交通工具和品牌物件",
+          "现代、职业、幻想、科幻和节日主题",
+          "单体摆件、组合套装和小场景",
+          "服装、配色、表情和底座设计"
+        ],
+        "best_for": [
+          "角色 Q 版化与潮玩概念",
+          "吉祥物、IP 周边和盲盒设计",
+          "可爱产品图、图标和社媒视觉",
+          "把严肃世界观转译为亲切收藏品"
+        ],
+        "not_for": [
+          "不适合写实人体、严肃电影感和恐怖压迫",
+          "不适合需要复杂动作透视的大型战斗画面",
+          "比例简化会损失服装、机械和面部微细节"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/3D-03.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/3D-03.png"
+      },
+      "refs": {
+        "card": "styles/3D/3D-03_chibi-toy/card.json",
+        "execution": "styles/3D/3D-03_chibi-toy/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "3D-04",
+      "display_name": "恐怖诡谲",
+      "name_en": "Eerie Horror",
+      "style_key": "",
+      "series": "3D",
+      "status": "active",
+      "one_liner": "暗黑哥特的布偶/黏土定格动画风格：角色像被手工捏制和搭建，比例瘦长或夸张，阴森古怪却保留童话、幽默与戏剧感。",
+      "selection": {
+        "scope": "暗黑童话布偶/黏土定格动画风格",
+        "portability": "中",
+        "visual_identity": [
+          "布偶或黏土定格动画的手工模型质感",
+          "瘦长、夸张、不对称的角色比例和大眼造型",
+          "哥特建筑、扭曲植物与手工旧布景",
+          "阴冷暗色中带戏剧光与暗黑童话气息"
+        ],
+        "adaptable": [
+          "人物、怪物、动物、玩偶、房屋和道具",
+          "暗黑童话、怪诞喜剧、万圣节、悬疑和家庭冒险",
+          "可怖程度、幽默程度与年龄感",
+          "角色肖像、故事场景、海报和动画概念"
+        ],
+        "best_for": [
+          "类似僵尸新娘、鬼妈妈方向的暗黑动画人物",
+          "怪诞小镇、旧宅、森林、地下世界和奇异道具",
+          "布偶/黏土定格动画概念、角色海报和故事场景",
+          "需要“诡异、手工、哥特，但仍有童话感”的内容"
+        ],
+        "not_for": [
+          "不适合明亮写实、现代商业产品和标准美型角色",
+          "不等同于纯血腥写实恐怖",
+          "不适合要求干净光滑、真实工业材质的高科技 3D"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/3D-04.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/3D-04.png"
+      },
+      "refs": {
+        "card": "styles/3D/3D-04_eerie-horror/card.json",
+        "execution": "styles/3D/3D-04_eerie-horror/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "3D-05",
+      "display_name": "国漫3D",
+      "name_en": "3D Chinese fantasy",
+      "style_key": "",
+      "series": "3D",
+      "status": "active",
+      "one_liner": "国风审美的三维动画与游戏视觉：东方人物、服装、建筑和山水以完整三维体积呈现，既能表现仙侠，也能覆盖武侠、历史、神话、宫廷与其他国风题材。",
+      "selection": {
+        "scope": "覆盖广泛国风题材的三维风格",
+        "portability": "中高",
+        "visual_identity": [
+          "东方审美人物与国风服饰的三维建模",
+          "中国传统建筑、山水、器物与文化视觉符号",
+          "完整三维体积、材质、空间镜头和动画感",
+          "写实光影与国漫理想化人物比例并存"
+        ],
+        "adaptable": [
+          "人物、灵兽、动物、法器、生活器物、建筑和山水环境",
+          "仙侠、武侠、神话、民俗、历史、宫廷和东方冒险",
+          "肖像、日常、对峙、飞行、战斗与大场景",
+          "写实程度、时代、地域、明暗和幻想浓度"
+        ],
+        "best_for": [
+          "仙侠、武侠、历史、神话、民俗和宫廷人物",
+          "宗门、山水、古城、园林、宫殿与生活空间",
+          "法器、灵兽、传统器物和动作过场",
+          "国风三维角色卡、封面、宣传图和叙事场景"
+        ],
+        "not_for": [
+          "核心仍是国风/中国文化语境，不适合完全无关的欧美现代世界",
+          "不适合二维水墨、平面图形和手绘绘本",
+          "不等同于纯写实纪录片或摄影风格"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/3D-05.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/3D-05.png"
+      },
+      "refs": {
+        "card": "styles/3D/3D-05_3d-chinese-fantasy/card.json",
+        "execution": "styles/3D/3D-05_3d-chinese-fantasy/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "3D-06",
+      "display_name": "毛绒玩具",
+      "name_en": "Plush Toy",
+      "style_key": "",
+      "series": "3D",
+      "status": "active",
+      "one_liner": "把角色与物件变成柔软毛绒玩具：可见绒毛、布料接缝和填充体积，配合温暖浅景深，像真实周边被放在镜头前拍摄。",
+      "selection": {
+        "scope": "高迁移的材质转译风格",
+        "portability": "高",
+        "visual_identity": [
+          "清晰可见的短绒、布料与填充质感",
+          "圆润可抱的比例和柔软轮廓",
+          "玩具摄影式布光与浅景深",
+          "缝线、布片或手工制作痕迹"
+        ],
+        "adaptable": [
+          "人物、动物、怪物、食物、物件和品牌形象",
+          "不同世界观角色的毛绒化",
+          "单只玩具、组合套装与温馨小场景",
+          "绒毛长度、面料、配色和包装"
+        ],
+        "best_for": [
+          "IP 角色和动物毛绒化",
+          "周边概念、礼物、儿童产品和社媒视觉",
+          "可爱怪物、食物与日常物件改造",
+          "温暖玩具摄影和陈列场景"
+        ],
+        "not_for": [
+          "不适合严肃真人肖像和真实战争场景",
+          "不适合需要硬表面机械精度的产品展示",
+          "毛绒化会主动削弱尖锐、危险和复杂细节"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/3D-06.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/3D-06.png"
+      },
+      "refs": {
+        "card": "styles/3D/3D-06_plush-toy/card.json",
+        "execution": "styles/3D/3D-06_plush-toy/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "IL-01",
+      "display_name": "治愈绘本",
+      "name_en": "Soothing Picture Book",
+      "style_key": "",
+      "series": "IL",
+      "status": "active",
+      "one_liner": "温柔、安静的手绘绘本：柔色线条、粉彩上色与亲切造型，让人物、动物和日常场景像一页可以慢慢阅读的故事。",
+      "selection": {
+        "scope": "宽题材温柔叙事绘本风格",
+        "portability": "高",
+        "visual_identity": [
+          "柔和有手感的彩色线稿",
+          "粉彩、低饱和和温暖色彩",
+          "亲切简化的人物与动物造型",
+          "安静叙事与绘本页感"
+        ],
+        "adaptable": [
+          "儿童、成人、动物、植物、物件和环境",
+          "家庭、陪伴、成长、旅行、自然和轻幻想",
+          "单幅场景、连续故事和封面",
+          "季节、时间、地域和配色"
+        ],
+        "best_for": [
+          "儿童与全年龄故事",
+          "家庭、动物、成长和日常陪伴",
+          "自然、城市和轻幻想场景",
+          "绘本页面、封面、教育与治愈内容"
+        ],
+        "not_for": [
+          "不适合强烈战斗、硬核恐怖和冷峻商业科技",
+          "不适合摄影写实、塑料 3D 和高冲击海报",
+          "柔和处理可能不适合需要强信息层级的复杂图表"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/IL-01.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/IL-01.png"
+      },
+      "refs": {
+        "card": "styles/IL/IL-01_soothing-picture-book/card.json",
+        "execution": "styles/IL/IL-01_soothing-picture-book/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "IL-02",
+      "display_name": "奇幻羊皮卷",
+      "name_en": "Classic Fantasy Parchment",
+      "style_key": "",
+      "series": "IL",
+      "status": "active",
+      "one_liner": "古老故事书与羊皮卷上的经典奇幻插画：画面带有岁月、传说与典籍感，人物、城堡、地图和器物像来自一部被保存很久的冒险史。",
+      "selection": {
+        "scope": "经典奇幻与古籍叙事风格",
+        "portability": "中高",
+        "visual_identity": [
+          "复古故事书或羊皮卷质感",
+          "古典奇幻造型和叙事构图",
+          "低饱和土色、墨色与旧金色",
+          "神秘、古老、被时间保存的氛围"
+        ],
+        "adaptable": [
+          "人物、怪物、建筑、地图、器物和完整场景",
+          "西方奇幻、神话、历史、探险和桌游世界",
+          "插图版画、地图页、卡牌与封面",
+          "明暗、年代感和纸张磨损程度"
+        ],
+        "best_for": [
+          "奇幻人物、城堡、遗迹和冒险场景",
+          "世界地图、典籍、法术书和古代道具",
+          "桌游卡牌、小说封面和故事章节插图",
+          "需要历史感、传说感和古老神秘气氛的内容"
+        ],
+        "not_for": [
+          "不适合现代清洁科技、霓虹赛博和高饱和可爱风",
+          "不适合摄影写实与光滑 3D",
+          "若题材完全现代日常，羊皮卷语义可能显得刻意"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/IL-02.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/IL-02.png"
+      },
+      "refs": {
+        "card": "styles/IL/IL-02_classic-fantasy-parchment/card.json",
+        "execution": "styles/IL/IL-02_classic-fantasy-parchment/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "IL-03",
+      "display_name": "新中式水墨",
+      "name_en": "Chinese Ink Painting",
+      "style_key": "",
+      "series": "IL",
+      "status": "active",
+      "one_liner": "高对比的新中式水墨：奔放墨块、飞白与大片留白共同构图，人物、山水、动物和物件都以墨势而非写实细节呈现。",
+      "selection": {
+        "scope": "宽题材东方水墨视觉底座",
+        "portability": "高",
+        "visual_identity": [
+          "黑白高对比的墨块与水墨晕染",
+          "奔放毛笔笔势、飞白和干湿变化",
+          "大量留白和强图底关系",
+          "现代构图与传统水墨语言结合"
+        ],
+        "adaptable": [
+          "人物、山水、动物、植物、建筑和器物",
+          "古代、现代、品牌、诗意与实验题材",
+          "纯黑白或少量强调色",
+          "海报、封面、场景、角色和视觉主图"
+        ],
+        "best_for": [
+          "山水、人物、动物和东方叙事",
+          "国风品牌、文化海报和封面",
+          "现代主题的水墨转译",
+          "需要留白、笔势、东方节奏和强黑白关系的内容"
+        ],
+        "not_for": [
+          "不适合细腻摄影写实、塑料 3D 和平滑赛璐璐",
+          "不适合依赖精确小文字和微小产品细节的视觉",
+          "水墨概括会主动舍弃部分写实材质与局部信息"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/IL-03.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/IL-03.png"
+      },
+      "refs": {
+        "card": "styles/IL/IL-03_chinese-ink-painting/card.json",
+        "execution": "styles/IL/IL-03_chinese-ink-painting/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "IL-04",
+      "display_name": "蜡笔水彩风",
+      "name_en": "Crayon Watercolor",
+      "style_key": "",
+      "series": "IL",
+      "status": "active",
+      "one_liner": "蜡笔与透明水彩叠在纸上的温暖插画：粗糙线条、干笔和纸纹保留手工痕迹，像带着童年记忆的故事书页面。",
+      "selection": {
+        "scope": "宽题材手工绘本与生活插画风格",
+        "portability": "高",
+        "visual_identity": [
+          "蜡笔或粗糙铅笔式轮廓",
+          "透明水彩、干笔和可见纸张颗粒",
+          "不完美、富有表情的手绘线条",
+          "温暖低饱和且带童书气息"
+        ],
+        "adaptable": [
+          "人物、动物、植物、食物、物件和场景",
+          "童年、家庭、旅行、季节、日常和轻幻想",
+          "不同纸色与主色调",
+          "绘本、海报、包装、明信片和社媒插画"
+        ],
+        "best_for": [
+          "儿童与全年龄绘本",
+          "温暖日常、成长、家庭和自然场景",
+          "手作品牌、包装与节日视觉",
+          "需要纸感、童真和人情味的内容"
+        ],
+        "not_for": [
+          "不适合精密科技、写实奢侈品和冷峻商业肖像",
+          "不适合光滑 3D、摄影真实和无纹理矢量",
+          "不完美线条不适合要求几何绝对准确的内容"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/IL-04.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/IL-04.png"
+      },
+      "refs": {
+        "card": "styles/IL/IL-04_crayon-watercolor/card.json",
+        "execution": "styles/IL/IL-04_crayon-watercolor/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "IL-05",
+      "display_name": "柔彩扁平",
+      "name_en": "Soft Flat Color",
+      "style_key": "",
+      "series": "IL",
+      "status": "active",
+      "one_liner": "柔和现代的扁平水粉插画：圆润形状、简化人物和梦幻粉彩构成清楚而舒展的画面，兼具编辑设计感与故事气息。",
+      "selection": {
+        "scope": "高迁移的现代编辑插画底座",
+        "portability": "高",
+        "visual_identity": [
+          "扁平简化的大形状与圆润轮廓",
+          "柔和水粉/数字水粉笔触",
+          "梦幻但平衡的粉彩配色",
+          "无硬黑轮廓，细节克制"
+        ],
+        "adaptable": [
+          "人物、动物、植物、物件、建筑和景观",
+          "现代生活、品牌、文化、教育、自然和轻幻想",
+          "信息型构图或叙事场景",
+          "配色、比例、抽象程度和装饰元素"
+        ],
+        "best_for": [
+          "品牌与编辑配图",
+          "人物生活、社会议题和文化内容",
+          "概念海报、文章头图与教育视觉",
+          "轻幻想、自然和带隐喻的叙事画面"
+        ],
+        "not_for": [
+          "不适合写实肖像、复杂材质和强动作战斗",
+          "不适合密集黑线、恐怖排线和塑料 3D",
+          "极细小情节或微表情会被简化造型削弱"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/IL-05.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/IL-05.png"
+      },
+      "refs": {
+        "card": "styles/IL/IL-05_soft-flat-color/card.json",
+        "execution": "styles/IL/IL-05_soft-flat-color/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "SK-01",
+      "display_name": "粗线草图",
+      "name_en": "Rough Sketch",
+      "style_key": "",
+      "series": "SK",
+      "status": "active",
+      "one_liner": "保留构造线和修改痕迹的动画开发草图：动作、结构和镜头思考直接留在纸面上，像角色设计、分镜与概念阶段的工作稿。",
+      "selection": {
+        "scope": "高迁移的开发过程与概念表达风格",
+        "portability": "高",
+        "visual_identity": [
+          "松动、快速、有重复修改痕迹的线条",
+          "红棕构造线与深色轮廓并存",
+          "半透明淡彩或局部色块",
+          "动画开发、分镜和概念草图感"
+        ],
+        "adaptable": [
+          "人物、动物、怪物、道具、载具和场景",
+          "任何时代与世界观",
+          "动作设计、表情、服装、镜头和空间研究",
+          "单张草图、设定页、分镜和提案板"
+        ],
+        "best_for": [
+          "角色动作、姿态和表情探索",
+          "服装、道具与怪物设计",
+          "动画分镜、故事板和场景构图",
+          "需要展示创作过程、速度感和设计思考的内容"
+        ],
+        "not_for": [
+          "不适合直接要求精修商业成品的任务",
+          "不适合光滑 3D、摄影写实和干净矢量",
+          "构造线与未完成感是风格的一部分，不能全部清理掉"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/SK-01.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/SK-01.png"
+      },
+      "refs": {
+        "card": "styles/SK/SK-01_rough-sketch/card.json",
+        "execution": "styles/SK/SK-01_rough-sketch/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "SK-02",
+      "display_name": "马克笔",
+      "name_en": "Marker Style",
+      "style_key": "",
+      "series": "SK",
+      "status": "active",
+      "one_liner": "粗笨亲切的马克笔插画：不规则轮廓、简化人物与略显稚拙的空间，让社区、生活和信息场景显得友好、直接、没有距离感。",
+      "selection": {
+        "scope": "宽题材友好说明与生活插画风格",
+        "portability": "高",
+        "visual_identity": [
+          "粗厚、不规则的马克笔轮廓",
+          "简化人物与扁平物件",
+          "有意保留的稚拙透视",
+          "柔和纸底和有限色彩"
+        ],
+        "adaptable": [
+          "人物、动物、建筑、交通、物件和简单地图",
+          "社区、教育、公共服务、日常、旅行和品牌内容",
+          "单一场景、流程说明、海报和社媒图",
+          "配色与人物多样性"
+        ],
+        "best_for": [
+          "社区与公共空间场景",
+          "教育、科普、流程和服务说明",
+          "家庭、旅行、街区与人物群像",
+          "需要亲切、包容、容易理解的品牌插画"
+        ],
+        "not_for": [
+          "不适合高端写实肖像、精密建筑图和奢华材质",
+          "不适合暗黑恐怖、强战斗和冷硬科技",
+          "稚拙透视不适合要求空间严格准确的任务"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/SK-02.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/SK-02.png"
+      },
+      "refs": {
+        "card": "styles/SK/SK-02_marker-style/card.json",
+        "execution": "styles/SK/SK-02_marker-style/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "SK-03",
+      "display_name": "手账涂鸦",
+      "name_en": "Journal Doodle",
+      "style_key": "",
+      "series": "SK",
+      "status": "active",
+      "one_liner": "像手账页面上的彩铅涂鸦：黑色记号笔轮廓、随手涂色和奶油纸底构成轻松、私人、可爱的生活记录感。",
+      "selection": {
+        "scope": "高迁移的小型叙事与装饰涂鸦风格",
+        "portability": "高",
+        "visual_identity": [
+          "粗糙黑色记号笔轮廓",
+          "彩铅式乱线填色与简化形状",
+          "奶油色纸张与手账排布感",
+          "不完美比例和轻松童趣"
+        ],
+        "adaptable": [
+          "人物、动物、食物、植物、物件和小场景",
+          "日常、旅行、学习、节日、情绪记录和品牌内容",
+          "单图、贴纸组、图标组和页面组合",
+          "配色、元素密度和装饰符号"
+        ],
+        "best_for": [
+          "手账、贴纸和社媒配图",
+          "生活物件、食物、旅行和学习记录",
+          "轻松品牌内容与活动视觉",
+          "需要随手、亲近、个人化表达的内容"
+        ],
+        "not_for": [
+          "不适合宏大写实场景和严肃商业肖像",
+          "不适合精密产品、复杂透视和强动作战斗",
+          "若画面要求高度正式与权威，本风格可能显得过于随意"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/SK-03.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/SK-03.png"
+      },
+      "refs": {
+        "card": "styles/SK/SK-03_journal-doodle/card.json",
+        "execution": "styles/SK/SK-03_journal-doodle/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "SK-04",
+      "display_name": "线条涂鸦",
+      "name_en": "Line Scribble",
+      "style_key": "",
+      "series": "SK",
+      "status": "active",
+      "one_liner": "以不均匀手绘线、随手排线和大量留白构成的轻量涂鸦漫画：通常为黑白或近单色，适合幽默、观点、表情和日常小情境。",
+      "selection": {
+        "scope": "高迁移的黑白观点与幽默表达风格",
+        "portability": "高",
+        "visual_identity": [
+          "黑白或纸灰色的极简配色",
+          "细而不均匀的手绘笔线",
+          "随手排线、潦草但可读的造型",
+          "大量留白与简化人物比例"
+        ],
+        "adaptable": [
+          "人物、动物、物件、符号和简单场景",
+          "幽默、日常、观点、科普、情绪和社会观察",
+          "单格漫画、连续小图、说明图和社媒内容",
+          "线条密度与黑白对比"
+        ],
+        "best_for": [
+          "幽默漫画与随笔插图",
+          "观点表达、科普和轻量说明",
+          "人物表情、简单情境和社媒配图",
+          "需要低成本感、直接感和手写个性的内容"
+        ],
+        "not_for": [
+          "不适合丰富彩色、真实材质和复杂电影光影",
+          "不适合高端精修肖像与宏大环境图",
+          "不要依赖模型生成可读文字；对白应后期排版"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/SK-04.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/SK-04.png"
+      },
+      "refs": {
+        "card": "styles/SK/SK-04_black-white-scribble/card.json",
+        "execution": "styles/SK/SK-04_black-white-scribble/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "SK-05",
+      "display_name": "水彩速写",
+      "name_en": "Watercolor Sketch",
+      "style_key": "",
+      "series": "SK",
+      "status": "active",
+      "one_liner": "钢笔线与透明水彩结合的轻盈速写：透视线保留手绘速度，大片白纸和局部色彩让城市、建筑、人物与旅途记忆清爽有呼吸。",
+      "selection": {
+        "scope": "高迁移的现场观察与旅行速写风格",
+        "portability": "高",
+        "visual_identity": [
+          "松动细钢笔线与可见透视辅助线",
+          "透明水彩晕染和局部暖色点缀",
+          "大量白纸留白与轻盈构图",
+          "旅行手记和现场速写感"
+        ],
+        "adaptable": [
+          "建筑、街道、自然、人物、交通、食物和物件",
+          "旅行、城市、乡村、建筑记录和生活观察",
+          "全景、街角、局部物件与人物活动",
+          "地域、天气、季节和配色"
+        ],
+        "best_for": [
+          "城市与建筑速写",
+          "旅行风景、街道和生活场景",
+          "咖啡馆、交通、植物与地方物件",
+          "旅游内容、地产氛围图、明信片和编辑插图"
+        ],
+        "not_for": [
+          "不适合厚重油画、塑料 3D 和高密度商业渲染",
+          "不适合需要绝对精确尺寸的建筑制图",
+          "不适合强暗黑恐怖和全屏重色块"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/SK-05.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/SK-05.png"
+      },
+      "refs": {
+        "card": "styles/SK/SK-05_watercolor-sketch/card.json",
+        "execution": "styles/SK/SK-05_watercolor-sketch/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "SK-06",
+      "display_name": "稚嫩涂画",
+      "name_en": "Childlike Brush",
+      "style_key": "",
+      "series": "SK",
+      "status": "active",
+      "one_liner": "故意保留笨拙与未完成感的水粉涂画：厚重干笔背景、简单剪影和不均匀黑线，让画面原始、直接，像未经修饰的情绪记录。",
+      "selection": {
+        "scope": "宽题材但审美强约束的实验涂画风格",
+        "portability": "中高",
+        "visual_identity": [
+          "粗宽干笔与可见手工涂抹",
+          "简单平面剪影和稚拙比例",
+          "厚而不均匀的黑色涂鸦线",
+          "低饱和底色配少量鲜亮原色"
+        ],
+        "adaptable": [
+          "人物、动物、物件、符号和简单环境",
+          "情绪、实验、社会观察、儿童视角和艺术海报",
+          "单幅插图、封面、海报和视觉素材",
+          "背景笔触、强调色和抽象程度"
+        ],
+        "best_for": [
+          "实验插画和艺术海报",
+          "情绪表达、社会观察和个人叙事",
+          "音乐、文化、独立出版与手作品牌视觉",
+          "需要粗粝、原始、反精致态度的内容"
+        ],
+        "not_for": [
+          "不适合精致人物美型、奢华产品和写实商业肖像",
+          "不适合精密结构、复杂透视和光滑 3D",
+          "未完成与不完美是目标，不应被自动修正成精致插画"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/SK-06.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/SK-06.png"
+      },
+      "refs": {
+        "card": "styles/SK/SK-06_childlike-brush/card.json",
+        "execution": "styles/SK/SK-06_childlike-brush/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "GR-01",
+      "display_name": "简约",
+      "name_en": "Minimalist",
+      "style_key": "",
+      "series": "GR",
+      "status": "active",
+      "one_liner": "干净、清楚的简约矢量插画：粗轮廓、有限色彩和几何形状快速传递主题，适合从图标到人物场景的广泛视觉表达。",
+      "selection": {
+        "scope": "高迁移的简约图形视觉底座",
+        "portability": "高",
+        "visual_identity": [
+          "干净矢量边缘与几何化形状",
+          "粗轮廓或清楚色块边界",
+          "有限、稳定、易识别的配色",
+          "细节克制，信息优先"
+        ],
+        "adaptable": [
+          "人物、动物、物件、建筑、场景和抽象概念",
+          "品牌、教育、科技、生活、文化与公共内容",
+          "图标、插画、海报、信息图和界面配图",
+          "配色、轮廓粗细和抽象程度"
+        ],
+        "best_for": [
+          "品牌插画、图标和界面视觉",
+          "科普、教育、流程与信息图",
+          "人物生活、产品概念和抽象主题",
+          "需要简洁、稳定、易缩放和高可读性的内容"
+        ],
+        "not_for": [
+          "不适合复杂真实材质、细腻皮肤和电影光影",
+          "不适合依赖笔触、纸纹和手工偶然性的画面",
+          "过度简化会削弱复杂叙事和微妙情绪"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/GR-01.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/GR-01.png"
+      },
+      "refs": {
+        "card": "styles/GR/GR-01_minimalist/card.json",
+        "execution": "styles/GR/GR-01_minimalist/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "GR-02",
+      "display_name": "三色硬切",
+      "name_en": "Three-Color Hardcut",
+      "style_key": "",
+      "series": "GR",
+      "status": "active",
+      "one_liner": "三种主色构成的硬切海报：人物或物件被压缩成大块剪影与锐利色面，画面现代、直接，远距离也有清楚的视觉冲击。",
+      "selection": {
+        "scope": "宽题材、强形式约束的编辑海报风格",
+        "portability": "高",
+        "visual_identity": [
+          "三色或极少色的硬边配色",
+          "大块剪影、切纸式色面和锐利轮廓",
+          "细节高度压缩，主次明确",
+          "现代编辑海报构图"
+        ],
+        "adaptable": [
+          "人物、动物、物件、运动和抽象主题",
+          "文化、体育、活动、品牌、观点和社会议题",
+          "竖版/横版海报、封面和社媒主图",
+          "具体三色方案与剪影比例"
+        ],
+        "best_for": [
+          "活动、文化和体育海报",
+          "人物剪影、动作和观点表达",
+          "品牌主视觉、封面和社媒宣传",
+          "需要限色、远距离识别和现代编辑感的内容"
+        ],
+        "not_for": [
+          "不适合细腻肖像、复杂表情和真实材质",
+          "不适合需要丰富环境细节和自然光影的场景",
+          "三色硬切是核心，不能不断增加颜色与渐变"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/GR-02.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/GR-02.png"
+      },
+      "refs": {
+        "card": "styles/GR/GR-02_three-color-hardcut/card.json",
+        "execution": "styles/GR/GR-02_three-color-hardcut/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "GR-03",
+      "display_name": "噪点印刷",
+      "name_en": "Grainy Print",
+      "style_key": "",
+      "series": "GR",
+      "status": "active",
+      "one_liner": "粗粝双色印刷与地下刊物感：半调颗粒、套色错位和动作剪影让画面像独立杂志、丝网海报或现场演出宣传品。",
+      "selection": {
+        "scope": "宽题材粗粝印刷视觉风格",
+        "portability": "高",
+        "visual_identity": [
+          "双色或少色丝网印刷质感",
+          "半调颗粒、墨色磨损与轻微套色错位",
+          "强动作剪影或高对比主体",
+          "地下刊物、独立出版和现场文化气息"
+        ],
+        "adaptable": [
+          "人物、乐队、运动、物件、建筑与抽象符号",
+          "音乐、街头、文化、运动、政治与实验题材",
+          "海报、专辑封面、刊物、包装和社媒图",
+          "双色方案、颗粒密度和错位程度"
+        ],
+        "best_for": [
+          "音乐与现场活动海报",
+          "独立刊物、专辑封面和文化宣传",
+          "动作人物、街头与运动主题",
+          "需要原始、反精致、印刷实验感的内容"
+        ],
+        "not_for": [
+          "不适合细腻写实肖像、奢华产品和干净科技视觉",
+          "不适合柔和治愈绘本和透明水彩",
+          "颗粒与错位应受控，不能退化成无目的脏噪点"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/GR-03.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/GR-03.png"
+      },
+      "refs": {
+        "card": "styles/GR/GR-03_grainy-print/card.json",
+        "execution": "styles/GR/GR-03_grainy-print/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "GR-04",
+      "display_name": "像素电玩",
+      "name_en": "Pixel Game",
+      "style_key": "",
+      "series": "GR",
+      "status": "active",
+      "one_liner": "清晰可见方形像素的复古电玩视觉：有限分辨率、块状色面与像素轮廓，把人物、物件和完整世界转译成 8/16-bit 游戏画面。",
+      "selection": {
+        "scope": "高迁移的媒介转译风格",
+        "portability": "高",
+        "visual_identity": [
+          "清晰可见的方形像素",
+          "无抗锯齿的像素轮廓",
+          "块状有限色阶与复古游戏配色",
+          "低分辨率但轮廓易识别"
+        ],
+        "adaptable": [
+          "人物、动物、怪物、物件、建筑和完整场景",
+          "任何时代、文化与世界观的像素化转译",
+          "sprite、头像、地图、场景、图标和动画帧",
+          "8-bit/16-bit 精细度与调色板"
+        ],
+        "best_for": [
+          "游戏角色、怪物和 sprite",
+          "地图、场景、建筑与道具",
+          "复古海报、图标、贴纸和社媒视觉",
+          "把现代、历史、奇幻或科幻内容转成像素世界"
+        ],
+        "not_for": [
+          "不适合细腻皮肤、真实材质和连续柔和渐变",
+          "不适合摄影写实与高分辨率油画完成度",
+          "必须保持像素网格与无抗锯齿，不能只是普通图加马赛克"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/GR-04.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/GR-04.png"
+      },
+      "refs": {
+        "card": "styles/GR/GR-04_pixel-game/card.json",
+        "execution": "styles/GR/GR-04_pixel-game/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "GR-05",
+      "display_name": "蓝黑版画",
+      "name_en": "Blue-Black Print",
+      "style_key": "",
+      "series": "GR",
+      "status": "active",
+      "one_liner": "钴蓝、黑与奶油纸构成的手工版画：粗糙墨边、半调网点和水彩墨块让人物、动物与场景安静、朴素，带独立童书和小型出版物气质。",
+      "selection": {
+        "scope": "中高迁移的限色版画插画风格",
+        "portability": "中高",
+        "visual_identity": [
+          "钴蓝、黑、奶油白为核心的限色关系",
+          "粗糙黑墨轮廓和手工毛边",
+          "半调网点、水彩墨块与干笔纹理",
+          "简化朴素的造型和安静构图"
+        ],
+        "adaptable": [
+          "人物、动物、植物、物件、建筑和景观",
+          "童书、文化、日常、自然、寓言与编辑题材",
+          "封面、内页、海报、包装和版画单图",
+          "蓝色占比、网点与水彩纹理密度"
+        ],
+        "best_for": [
+          "独立童书与寓言插画",
+          "人物、动物、自然和安静生活场景",
+          "文化出版、包装、海报和文创视觉",
+          "需要朴素、手工、安静且有印刷质感的内容"
+        ],
+        "not_for": [
+          "不适合高饱和多彩、摄影写实和塑料 3D",
+          "不适合强烈英雄战斗与奢华商业质感",
+          "钴蓝/黑/奶油限色是辨识重点，完全放开色彩会削弱风格"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/GR-05.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/GR-05.png"
+      },
+      "refs": {
+        "card": "styles/GR/GR-05_blue-black-print/card.json",
+        "execution": "styles/GR/GR-05_blue-black-print/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "PT-01",
+      "display_name": "半写实厚涂",
+      "name_en": "Semi-Realistic Painterly",
+      "style_key": "",
+      "series": "PT",
+      "status": "active",
+      "one_liner": "通用半写实厚涂：人物、动物、装备和环境以有体积的笔触与完整明暗呈现，可用于肖像、立绘、封面、动作与场景，是商业厚涂的基础版本。",
+      "selection": {
+        "scope": "高迁移的通用商业厚涂底座",
+        "portability": "高",
+        "visual_identity": [
+          "半写实比例、结构与体积塑造",
+          "可见但受控的厚涂笔触",
+          "完整明暗、材质重量和明确视觉焦点",
+          "具有商业插画完成度，但不强制极端镜头和动作"
+        ],
+        "adaptable": [
+          "人物、怪物、动物、装备、建筑、产品和环境",
+          "奇幻、武侠、神话、科幻、历史、现代与其他题材",
+          "肖像、立绘、双人关系、动作、封面和场景",
+          "写实程度、色调、动作强度、构图和镜头"
+        ],
+        "best_for": [
+          "角色肖像、立绘、双人关系和小说封面",
+          "人物、怪物、动物、装备与环境场景",
+          "游戏卡面、剧情插图、海报和概念视觉",
+          "需要半写实体积、材质与商业完成度的广泛内容"
+        ],
+        "not_for": [
+          "不适合平涂赛璐璐、极简矢量和手账涂鸦",
+          "不适合摄影毛孔级真实和光滑塑料 3D",
+          "需要低机位、强透视、强动作和完整 Art Direction 时，升级使用商业英雄厚涂 Splash"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/PT-01.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/PT-01.png"
+      },
+      "refs": {
+        "card": "styles/PT/PT-01_semi-realistic-painterly/card.json",
+        "execution": "styles/PT/PT-01_semi-realistic-painterly/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "PT-02",
+      "display_name": "赛博朋克",
+      "name_en": "Cyberpunk",
+      "style_key": "",
+      "series": "PT",
+      "status": "active",
+      "one_liner": "霓虹照亮的未来都市视觉：品红、青蓝与深色城市形成高反差，角色、街道和科技物件被边缘光与湿润反射包围。",
+      "selection": {
+        "scope": "世界观绑定但主体广泛的未来都市风格",
+        "portability": "中",
+        "visual_identity": [
+          "品红、青蓝等霓虹高反差配色",
+          "未来都市、电子设施与夜间环境",
+          "强轮廓光、屏幕光和湿润反射",
+          "电影感空间与科技都市氛围"
+        ],
+        "adaptable": [
+          "人物、载具、建筑、产品、室内和街道",
+          "侦探、动作、日常、时尚、犯罪与未来社会题材",
+          "肖像、场景、海报、产品概念和封面",
+          "明暗、霓虹密度、科技程度和地域文化"
+        ],
+        "best_for": [
+          "未来都市人物与街景",
+          "科技产品、载具、建筑和室内空间",
+          "科幻犯罪、侦探、时尚和动作题材",
+          "需要霓虹、夜色、边缘光与都市压迫感的视觉"
+        ],
+        "not_for": [
+          "不适合自然柔光、古典纯历史和治愈儿童绘本",
+          "不适合低对比粉彩和传统水墨",
+          "若没有未来科技或都市语境，赛博朋克辨识度会下降"
+        ],
+        "choose_when": "",
+        "common_mistakes": []
+      },
+      "preview": {
+        "local_path": "assets/previews/PT-02.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/PT-02.png"
+      },
+      "refs": {
+        "card": "styles/PT/PT-02_cyberpunk/card.json",
+        "execution": "styles/PT/PT-02_cyberpunk/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    },
+    {
+      "internal_id": "SP-03",
+      "display_name": "暗黑东亚厚涂",
+      "name_en": "Dark East Asian Painterly",
+      "style_key": "dark-east-asian-painterly",
+      "series": "SP",
+      "status": "active",
+      "one_liner": "暗色东亚历史与国风的半写实厚涂：以可信的人物结构、材质重量和低调戏剧光影，表现宫廷权谋、历史人物、武将战争与成熟硬核叙事。",
+      "selection": {
+        "scope": "",
+        "portability": "",
+        "visual_identity": [
+          "半写实国风厚涂，没有明显漫画描边，人物形体依靠光影和软硬边缘塑造",
+          "暗色低调光影，但脸、手、兵器和关键动作始终可读",
+          "布料、皮革、金属、漆器和旧甲具有真实重量",
+          "常用铁灰、灰绿、深红、暗金和土褐色，具体配色可随题材变化",
+          "细节集中在脸、手和关键符号，背景较松",
+          "既可做宫廷人物肖像，也能表现武将、对峙和战争场景"
+        ],
+        "adaptable": [],
+        "best_for": [
+          "中国、朝鲜、日本等东亚古代或架空朝堂权谋",
+          "帝王、权臣、谋士、将领和复杂阵营人物",
+          "三国、战国、水浒、武侠、历史战争题材",
+          "暗色武将立绘、人物封面与战场叙事",
+          "需要材质重量、政治压迫或战争肃杀感的内容",
+          "成熟、克制、危险或威严的人物关系"
+        ],
+        "not_for": [
+          "明亮治愈恋爱和轻松日常",
+          "清爽赛璐璐动漫",
+          "可爱 Q 版或儿童绘本",
+          "摄影写实毛孔感",
+          "光滑塑料 3D",
+          "现代都市、赛博朋克或欧美奇幻"
+        ],
+        "choose_when": "当用户需要东亚古风或历史题材的暗色半写实厚涂，并强调权力、战争、人物重量或成熟硬核感时选择；若同时涉及强动作或大型战场，由用户在本风格与商业英雄厚涂 Splash 之间判断。",
+        "common_mistakes": [
+          "理解成明亮古风言情漫画",
+          "理解成水墨留白速写",
+          "做成纯黑恐怖片",
+          "做成写实摄影人像",
+          "只理解成宫廷女性肖像，忽略武将和战争方向"
+        ]
+      },
+      "preview": {
+        "local_path": "assets/previews/SP-03.png",
+        "public_url": "https://public.cohub.run/s/d95744b4-07f6-4836-8209-f1c6ece7658b/studio-styles-v1/assets/previews/SP-03.png"
+      },
+      "refs": {
+        "card": "styles/SP/SP-03_dark-east-asian-painterly/card.json",
+        "execution": "styles/SP/SP-03_dark-east-asian-painterly/execution.md"
+      },
+      "execution": {
+        "drive_mode": "prompt_only"
+      }
+    }
+  ]
+}
+
