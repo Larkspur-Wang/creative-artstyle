@@ -77,7 +77,7 @@ const iconFor: Record<CapabilityId, typeof Palette> = {
 };
 
 type Stage = "idle" | "authorizing" | "queued" | "running" | "archiving" | "done" | "error";
-type FailureKind = "policy" | "timeout" | "channel" | "download" | "unknown";
+type FailureKind = "policy" | "timeout" | "channel" | "download" | "auth" | "unknown";
 type Preview = {
   src: string;
   name: string;
@@ -108,6 +108,20 @@ const stageLabel: Record<Stage, string> = {
 // Failure classification absorbed from shanyue production daily-reports.
 function classifyFailure(message: string): { kind: FailureKind; hint: string } {
   const m = message.toLowerCase();
+  // Authorization popup issues hit visitors first: the SDK opens cohub.run/work-auth
+  // in a 480x640 popup, so blockers and early closes are the common failure mode.
+  if (m.includes("allow popups") || m.includes("failed to open authorization window")) {
+    return { kind: "auth", hint: "浏览器拦下了授权弹窗。请允许本站弹窗（地址栏右侧图标）后重试。" };
+  }
+  if (m.includes("authorization window was closed")) {
+    return { kind: "auth", hint: "授权窗口被关闭了。再点一次，在弹窗里完成登录并同意授权。" };
+  }
+  if (m.includes("did not respond in time")) {
+    return { kind: "auth", hint: "授权窗口没有响应。检查网络后重试，或先在 cohub.run 登录再回来。" };
+  }
+  if (m.includes("no allowed scopes") || m.includes("broker mode")) {
+    return { kind: "auth", hint: "这个页面需要从 Cohub 站内打开才能生成。请通过 Work 页面访问，不要直接打开资源链接。" };
+  }
   if (m.includes("policy") || m.includes("sensitive") || m.includes("版权") || m.includes("copyright")) {
     return { kind: "policy", hint: "内容审核拦截。换一个说法，降低 IP 识别度，或改成不露正脸的表达。" };
   }

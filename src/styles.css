@@ -1240,3 +1240,6 @@ button {
 /* web/deck filmstrip thumbs are wide screenshots */
 .filmstrip.strip-browser, .filmstrip.strip-slides { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .filmstrip.strip-browser img, .filmstrip.strip-slides img { aspect-ratio: 16 / 10; }
+
+/* auth failures are actionable, not scary — visitors hit these first */
+.error-message.failure-auth { border-left-color: #3f6ad8; background: #eef2fc; color: #2f4f9d; }
