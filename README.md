@@ -1,10 +1,10 @@
-# Creative Commons
+# Creative Artstyle
 
 一个共享创意工作台。五种能力，每一种都有**独立的生成方式、独立的控件、独立的输出画框和自己的
 example**，不是同一套卡片换个名字。
 
 发布为公开 Work：`lark / beautiful-skills / minimal-zine-poster`
-（slug 沿用历史，标题已是 Creative Commons）。
+（slug 沿用历史，标题已是 Creative Artstyle）。
 
 ## 五种能力
 
@@ -21,7 +21,7 @@ example**，不是同一套卡片换个名字。
 ## 目录
 
 ```text
-creative-commons/
+creative-artstyle/
 ├── src/
 │   ├── App.tsx           # 能力分离的工作台
 │   ├── capabilities.ts   # 每个能力的元数据 + prompt 编译器

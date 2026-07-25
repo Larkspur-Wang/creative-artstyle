@@ -1,4 +1,4 @@
-# Creative Commons — Visual System
+# Creative Artstyle — Visual System
 
 编辑部风格（independent editorial magazine × content production pipeline），吸收自 Studio_ArtStyle
 风格库和小红书卡片设计原则。

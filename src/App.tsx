@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { createCohubClient } from "@neta-art/cohub";
+import ParticleField from "./ParticleField";
 import {
   Archive,
   ArrowUpRight,
@@ -341,7 +342,7 @@ function App() {
         : (["session.prompt.fullaccess"] as const);
       const approved = await client.auth.request({
         scopes: [...scopes],
-        reason: "在这个 Creative Commons 中生成内容，并把结果归档到当前 Space。",
+        reason: "在这个 Creative Artstyle 中生成内容，并把结果归档到当前 Space。",
       });
       if (!approved) {
         setStage("idle");
@@ -416,7 +417,7 @@ function App() {
         <div className="brand-lockup">
           <div className="issue-mark" aria-hidden="true"><span>CC</span><span>{cap.index}</span></div>
           <div>
-            <h1>Creative Commons</h1>
+            <h1>Creative Artstyle</h1>
             <p>visual things, made together</p>
           </div>
         </div>
@@ -454,7 +455,8 @@ function App() {
 
         <main className="main-workspace">
           <section className="hero-row">
-            <div>
+            <ParticleField accent={cap.accent} />
+            <div className="hero-copy">
               <p className="kicker">A SMALL STUDIO FOR BIG IDEAS <span>↗</span></p>
               <h2>Make the thing<br /><em>you can see.</em></h2>
             </div>

@@ -192,7 +192,7 @@ export const webKinds = [
 export function compileWebPrompt(brief: string, kind: string, sections: string) {
   const k = webKinds.find((x) => x.id === kind) ?? webKinds[0];
   return [
-    `你是 Creative Commons 的制作 Agent。请使用工具直接创建最终可运行文件，不要只回复方案。`,
+    `你是 Creative Artstyle 的制作 Agent。请使用工具直接创建最终可运行文件，不要只回复方案。`,
     `需求：${brief.trim()}`,
     `产出类型：${k.label}（响应式 HTML，单文件优先，内联 CSS，无需构建即可打开）。`,
     sections.trim() && `需要包含的板块：${sections.trim()}。`,
@@ -213,7 +213,7 @@ export const deckArcs = [
 export function compileDeckPrompt(brief: string, audience: string, slides: number, arc: string) {
   const a = deckArcs.find((x) => x.id === arc) ?? deckArcs[0];
   return [
-    `你是 Creative Commons 的制作 Agent。请使用工具直接创建最终可编辑演示文稿，不要只回复方案。`,
+    `你是 Creative Artstyle 的制作 Agent。请使用工具直接创建最终可编辑演示文稿，不要只回复方案。`,
     `主题：${brief.trim()}`,
     audience.trim() && `目标观众：${audience.trim()}。`,
     `叙事结构：${a.label}，约 ${slides} 页，有清晰章节、层级和视觉叙事。`,
