@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { createCohubClient } from "@neta-art/cohub";
 import ParticleField from "./ParticleField";
 import {
@@ -423,6 +423,27 @@ function App() {
   };
 
   const isGenerating = ["authorizing", "queued", "running", "archiving"].includes(stage);
+
+  // Image generation takes ~2-4 min and video longer. Without visible elapsed time
+  // a static "Making" label reads as a hang, so surface the clock and an estimate.
+  const [elapsed, setElapsed] = useState(0);
+  const startedRef = useRef<number | null>(null);
+  useEffect(() => {
+    if (!isGenerating) {
+      startedRef.current = null;
+      setElapsed(0);
+      return;
+    }
+    if (startedRef.current === null) startedRef.current = Date.now();
+    const id = window.setInterval(() => {
+      if (startedRef.current !== null) {
+        setElapsed(Math.floor((Date.now() - startedRef.current) / 1000));
+      }
+    }, 1000);
+    return () => window.clearInterval(id);
+  }, [isGenerating]);
+  const etaSeconds = capId === "motion" ? 300 : capId === "web" || capId === "deck" ? 120 : 200;
+  const clock = `${String(Math.floor(elapsed / 60)).padStart(2, "0")}:${String(elapsed % 60).padStart(2, "0")}`;
   const selectedAccent = accents.find((a) => a.id === recipe.accent);
 
   return (
@@ -704,7 +725,20 @@ function App() {
                 )}
 
                 <div className="output-stamp"><span>{preview.generated ? "GENERATED" : "EXAMPLE"}</span><strong>{cap.family}</strong></div>
-                {isGenerating && <div className="generating-overlay"><div className="scan-line" /><LoaderCircle className="spin" size={23} /><span>{stageLabel[stage]}</span></div>}
+                {isGenerating && (
+                  <div className="generating-overlay">
+                    <div className="scan-line" />
+                    <LoaderCircle className="spin" size={23} />
+                    <span>{stageLabel[stage]}</span>
+                    <b className="gen-clock">{clock}</b>
+                    <div className="gen-track"><i style={{ width: `${Math.min(96, (elapsed / etaSeconds) * 100)}%` }} /></div>
+                    <em className="gen-eta">
+                      {elapsed > etaSeconds
+                        ? "比平时久一点，任务还在跑。不要关闭页面。"
+                        : `通常需要 ${Math.round(etaSeconds / 60)} 分钟左右，请保持页面打开。`}
+                    </em>
+                  </div>
+                )}
               </div>
 
               <div className="output-caption">

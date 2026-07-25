@@ -1243,3 +1243,9 @@ button {
 
 /* auth failures are actionable, not scary — visitors hit these first */
 .error-message.failure-auth { border-left-color: #3f6ad8; background: #eef2fc; color: #2f4f9d; }
+
+/* generation progress: elapsed clock + ETA track (a static label reads as a hang) */
+.gen-clock { margin-top: 12px; font: 400 25px/1 Georgia, serif; letter-spacing: .01em; font-variant-numeric: tabular-nums; color: #f4f3ee; }
+.gen-track { width: min(230px, 62%); height: 2px; margin-top: 13px; background: rgb(244 243 238 / 20%); overflow: hidden; }
+.gen-track i { display: block; height: 100%; background: var(--cap-accent, #e9d622); transition: width 1s linear; }
+.gen-eta { margin-top: 12px; max-width: 260px; color: rgb(244 243 238 / 62%); font: 10px/1.6 "Courier New", monospace; font-style: normal; text-align: center; }
