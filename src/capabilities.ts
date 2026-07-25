@@ -244,6 +244,7 @@ export const starterBriefs: Record<CapabilityId, string> = {
 
 export const examplesByCapability: Record<CapabilityId, { name: string; src: string; kind: string }[]> = {
   poster: [
+    { name: "花莲的海边，清水断崖", src: "./examples/poster/hualien-qingshui-cliff.png", kind: "GPT" },
     { name: "Rain Bookshop", src: "./examples/poster/generated-rain-bookshop.png", kind: "GPT" },
     { name: "Yellow Step", src: "./examples/poster/yellow-step.jpeg", kind: "ZINE" },
     { name: "Moon Tide", src: "./examples/poster/moon-tide.jpeg", kind: "ZINE" },

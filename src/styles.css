@@ -1249,3 +1249,6 @@ button {
 .gen-track { width: min(230px, 62%); height: 2px; margin-top: 13px; background: rgb(244 243 238 / 20%); overflow: hidden; }
 .gen-track i { display: block; height: 100%; background: var(--cap-accent, #e9d622); transition: width 1s linear; }
 .gen-eta { margin-top: 12px; max-width: 260px; color: rgb(244 243 238 / 62%); font: 10px/1.6 "Courier New", monospace; font-style: normal; text-align: center; }
+
+/* archiving runs after the media is already visible — badge, not a blocking overlay */
+.archiving-badge { position: absolute; left: 14px; bottom: 14px; z-index: 4; display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px; background: rgb(29 30 28 / 82%); color: #f4f3ee; font: 10px "Courier New", monospace; backdrop-filter: blur(6px); }

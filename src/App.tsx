@@ -401,9 +401,9 @@ function App() {
       const src = getMediaSource(media);
       if (!src) throw new Error("生成任务完成，但没有返回可预览的媒体。");
 
-      setStage("archiving");
-      const savedPath = await archiveMedia(spaceId, src, capId === "motion" ? "mp4" : "png");
-      setArchivePath(savedPath);
+      // Show the result the moment it exists. Archiving goes through a Space Agent
+      // turn that can take minutes, and blocking the preview on it made finished
+      // generations look like failures.
       setPreview({
         src,
         name: brief.trim(),
@@ -411,7 +411,21 @@ function App() {
         output: capId === "motion" ? "video" : "image",
         generated: true,
       });
-      setStage("done");
+      setStage("archiving");
+
+      try {
+        const savedPath = await archiveMedia(spaceId, src, capId === "motion" ? "mp4" : "png");
+        setArchivePath(savedPath);
+        setStage("done");
+      } catch (archiveError) {
+        // The media is already on screen, so a failed archive is a warning, not a loss.
+        setStage("done");
+        setError(
+          `已生成并显示，但归档到 Space 失败：${
+            archiveError instanceof Error ? archiveError.message : String(archiveError)
+          }。右下可以直接下载。`,
+        );
+      }
     } catch (caught) {
       console.error(caught);
       const message = caught instanceof Error ? caught.message : "生成时发生未知错误。";
@@ -423,6 +437,8 @@ function App() {
   };
 
   const isGenerating = ["authorizing", "queued", "running", "archiving"].includes(stage);
+  // The blocking overlay must not cover a finished image while it archives.
+  const isBlocking = ["authorizing", "queued", "running"].includes(stage);
 
   // Image generation takes ~2-4 min and video longer. Without visible elapsed time
   // a static "Making" label reads as a hang, so surface the clock and an estimate.
@@ -725,7 +741,13 @@ function App() {
                 )}
 
                 <div className="output-stamp"><span>{preview.generated ? "GENERATED" : "EXAMPLE"}</span><strong>{cap.family}</strong></div>
-                {isGenerating && (
+                {stage === "archiving" && (
+                  <div className="archiving-badge">
+                    <LoaderCircle className="spin" size={13} />
+                    <span>正在归档到 Space，图已可以下载</span>
+                  </div>
+                )}
+                {isBlocking && (
                   <div className="generating-overlay">
                     <div className="scan-line" />
                     <LoaderCircle className="spin" size={23} />
