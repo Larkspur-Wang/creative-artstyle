@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quiet Studio — 独立设计师作品集</title>
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --paper:#f4f3ee; --ink:#1d1e1c; --cool:#d8dad2; --moss:#4f9d69; --muted:#6c706a;
+  }
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:Georgia,"Times New Roman",serif;
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:99;pointer-events:none;opacity:.05;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .mono{font-family:"Courier New",monospace}
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px clamp(20px,5vw,64px);border-bottom:1px solid var(--cool);
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand i{
+    width:34px;height:34px;display:grid;place-content:center;
+    background:var(--moss);color:#fff;font:700 11px/1 "Courier New",monospace;font-style:normal;
+  }
+  .brand b{font:400 18px Georgia,serif}
+  nav{display:flex;gap:22px}
+  nav a{color:var(--muted);font:10px "Courier New",monospace;letter-spacing:.1em;text-decoration:none;text-transform:uppercase}
+  nav a:hover{color:var(--ink)}
+  .hero{
+    padding:clamp(56px,10vw,120px) clamp(20px,5vw,64px) clamp(40px,7vw,80px);
+    display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:end;
+  }
+  .hero .eyebrow{margin:0 0 20px;color:var(--muted);font:10px "Courier New",monospace;letter-spacing:.14em}
+  .hero h1{
+    margin:0;font:400 clamp(40px,6.4vw,86px)/.94 Georgia,serif;letter-spacing:-.05em;
+    animation:rise .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .hero h1 em{color:var(--moss);font-style:italic}
+  .hero p{max-width:34ch;margin:0;color:var(--muted);font-size:14px;line-height:1.85}
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .rule{height:1px;margin:0 clamp(20px,5vw,64px);background:var(--cool)}
+  section{padding:clamp(44px,6vw,74px) clamp(20px,5vw,64px)}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:30px}
+  .sec-head span{color:var(--muted);font:9px "Courier New",monospace}
+  .sec-head h2{margin:0;font:400 15px Georgia,serif}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .card{
+    border:1px solid var(--cool);background:#fbfbf8;padding:0;overflow:hidden;
+    transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease;
+  }
+  .card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgb(33 35 30 / 12%)}
+  .thumb{
+    aspect-ratio:4/3;display:grid;place-content:center;
+    background:linear-gradient(140deg,#e9ebe3,#dfe2d8);color:#a8ab9f;
+    font:9px "Courier New",monospace;letter-spacing:.1em;
+  }
+  .card:nth-child(2) .thumb{background:linear-gradient(140deg,#e6ebe6,#d6ded6)}
+  .card:nth-child(3) .thumb{background:linear-gradient(140deg,#eceae2,#e0ddd2)}
+  .card-body{padding:15px 16px 17px}
+  .card-body b{display:block;font:400 16px Georgia,serif}
+  .card-body span{display:block;margin-top:6px;color:var(--muted);font:10px "Courier New",monospace}
+  .about{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px}
+  .about p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.9}
+  .about strong{display:block;margin-bottom:10px;color:var(--ink);font:400 15px Georgia,serif}
+  footer{
+    padding:30px clamp(20px,5vw,64px);border-top:1px solid var(--cool);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    color:var(--muted);font:10px "Courier New",monospace;
+  }
+  footer a{color:var(--moss);text-decoration:none}
+  @media(max-width:760px){.hero{grid-template-columns:1fr;gap:26px}nav{display:none}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+  <header>
+    <div class="brand"><i>QS</i><b>Quiet Studio</b></div>
+    <nav><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <p class="eyebrow">INDEPENDENT DESIGN PRACTICE / SINCE 2019</p>
+      <h1>A quiet place<br />for <em>good work.</em></h1>
+    </div>
+    <p>只做少量项目，做久一点。品牌、出版物、以及需要被认真读完的界面。</p>
+  </div>
+
+  <div class="rule"></div>
+
+  <section id="work">
+    <div class="sec-head"><span>01</span><h2>Selected work</h2></div>
+    <div class="grid">
+      <article class="card"><div class="thumb">IDENTITY</div><div class="card-body"><b>Paper Almanac</b><span>brand / print — 2026</span></div></article>
+      <article class="card"><div class="thumb">EDITORIAL</div><div class="card-body"><b>Slow Table</b><span>publication — 2025</span></div></article>
+      <article class="card"><div class="thumb">INTERFACE</div><div class="card-body"><b>Field Notes App</b><span>product / ui — 2025</span></div></article>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section id="about">
+    <div class="sec-head"><span>02</span><h2>About</h2></div>
+    <div class="about">
+      <div><strong>How we work</strong><p>先把问题读懂，再决定要不要做设计。多数时候，答案是更少的元素和更清楚的层级。</p></div>
+      <div><strong>What we make</strong><p>视觉识别、出版物排版、以及小而完整的产品界面。偏爱纸张、墨黑，和一处克制的强调色。</p></div>
+      <div><strong>Availability</strong><p>每季度接两个项目。欢迎带着还没想清楚的想法来聊。</p></div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <span>© 2026 Quiet Studio</span>
+    <span>hello@quietstudio.example · <a href="#">Instagram</a></span>
+  </footer>
+</body>
+</html>

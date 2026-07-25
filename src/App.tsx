@@ -456,7 +456,15 @@ function App() {
         <main className="main-workspace">
           <section className="hero-row">
             <div className="hero-art" aria-hidden="true">
-              <img src="./examples/hero/hero-art.png" alt="" />
+              {capabilities.map((item) => (
+                <img
+                  key={item.id}
+                  src={item.heroArt}
+                  alt=""
+                  className={capId === item.id ? "on" : ""}
+                  loading={item.id === "poster" ? "eager" : "lazy"}
+                />
+              ))}
               <span className="hero-art-veil" />
             </div>
             <ParticleField accent={cap.accent} />
@@ -652,16 +660,23 @@ function App() {
                 {cap.frame === "browser" && (
                   <div className="browser-frame">
                     <div className="browser-bar"><i /><i /><i /><span>localhost / index.html</span></div>
+                    {preview.src && !preview.generated ? (
+                      <div className="browser-shot"><img src={preview.src} alt={preview.name} /></div>
+                    ) : (
                     <div className="browser-body">
                       <strong>{brief.trim() || "A quiet place for good work"}</strong>
                       <em>{webKinds.find((k) => k.id === webKind)?.label}</em>
                       <div className="browser-lines"><span /><span /><span /></div>
                       {archivePath && <code>{archivePath}</code>}
                     </div>
+                    )}
                   </div>
                 )}
                 {/* slides */}
                 {cap.frame === "slides" && (
+                  preview.src && !preview.generated ? (
+                    <div className="media-frame landscape"><img src={preview.src} alt={preview.name} /></div>
+                  ) : (
                   <div className="slides-frame">
                     <div className="slide big"><span>01</span><strong>{brief.trim() || "标题页"}</strong><em>{deckArcs.find((a) => a.id === deckArc)?.label}</em></div>
                     <div className="slide-row">
@@ -671,6 +686,7 @@ function App() {
                     </div>
                     {archivePath && <code className="slides-path">{archivePath}</code>}
                   </div>
+                  )
                 )}
 
                 <div className="output-stamp"><span>{preview.generated ? "GENERATED" : "EXAMPLE"}</span><strong>{cap.family}</strong></div>

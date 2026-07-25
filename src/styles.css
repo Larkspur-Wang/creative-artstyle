@@ -1228,3 +1228,15 @@ button {
 .hero-note p { margin: 0 0 14px; color: #4e514a; }
 .hero-note span { color: #8d9189; }
 @media (max-width: 900px) { .hero-note { max-width: 100%; background: rgb(250 250 246 / 92%); } }
+
+/* ============ per-capability hero art crossfade (v5) ============ */
+.hero-art img { position: absolute; inset: 0; opacity: 0; transition: opacity .85s cubic-bezier(.4,0,.2,1); }
+.hero-art img.on { opacity: 1; }
+
+/* real screenshot inside the browser chrome (web example) */
+.browser-shot { overflow: hidden; background: #fbfbf8; }
+.browser-shot img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: top center; }
+
+/* web/deck filmstrip thumbs are wide screenshots */
+.filmstrip.strip-browser, .filmstrip.strip-slides { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.filmstrip.strip-browser img, .filmstrip.strip-slides img { aspect-ratio: 16 / 10; }

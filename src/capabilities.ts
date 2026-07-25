@@ -20,6 +20,7 @@ export type CapabilityMeta = {
   frame: FrameKind;
   output: OutputKind;
   ratioLabel: string;
+  heroArt: string;
 };
 
 // The editorial palette absorbed from the Studio style-reference direction:
@@ -39,6 +40,7 @@ export const capabilities: CapabilityMeta[] = [
     frame: "portrait",
     output: "image",
     ratioLabel: "1024 × 1536",
+    heroArt: "./examples/hero/hero-art.png",
   },
   {
     id: "card",
@@ -54,6 +56,7 @@ export const capabilities: CapabilityMeta[] = [
     frame: "landscape",
     output: "image",
     ratioLabel: "1536 × 1024",
+    heroArt: "./examples/hero/hero-card.png",
   },
   {
     id: "motion",
@@ -69,6 +72,7 @@ export const capabilities: CapabilityMeta[] = [
     frame: "video",
     output: "video",
     ratioLabel: "5s / 720p",
+    heroArt: "./examples/hero/hero-motion.png",
   },
   {
     id: "web",
@@ -84,6 +88,7 @@ export const capabilities: CapabilityMeta[] = [
     frame: "browser",
     output: "code",
     ratioLabel: "HTML / 响应式",
+    heroArt: "./examples/hero/hero-web.png",
   },
   {
     id: "deck",
@@ -99,6 +104,7 @@ export const capabilities: CapabilityMeta[] = [
     frame: "slides",
     output: "code",
     ratioLabel: "16:9 / 多页",
+    heroArt: "./examples/hero/hero-deck.png",
   },
 ];
 
@@ -247,6 +253,6 @@ export const examplesByCapability: Record<CapabilityId, { name: string; src: str
   ],
   card: [{ name: "Make Room For Air", src: "./examples/card/make-room-for-air.png", kind: "GPT" }],
   motion: [{ name: "City, 4AM", src: "./examples/motion/city-4am.mp4", kind: "SEEDANCE" }],
-  web: [],
-  deck: [],
+  web: [{ name: "Quiet Studio", src: "./examples/web/quiet-studio.png", kind: "HTML" }],
+  deck: [{ name: "城市在夜里", src: "./examples/deck/night-city.png", kind: "DECK" }],
 };

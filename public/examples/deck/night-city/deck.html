@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>城市夜间生活 — 文化项目提案</title>
+<style>
+  *{box-sizing:border-box}
+  :root{--paper:#f4f3ee;--ink:#1d1e1c;--cool:#d8dad2;--orange:#d6863a;--muted:#6c706a}
+  body{margin:0;background:#e8e8e2;color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+  body::after{
+    content:"";position:fixed;inset:0;z-index:99;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .deck{max-width:1100px;margin:0 auto;padding:34px 20px 60px;display:grid;gap:26px}
+  .slide{
+    position:relative;aspect-ratio:16/9;background:var(--paper);border:1px solid #cbcdc5;
+    box-shadow:0 14px 34px rgb(33 35 30 / 12%);padding:clamp(26px,4.4vw,58px);
+    display:flex;flex-direction:column;overflow:hidden;
+  }
+  .num{position:absolute;top:20px;right:24px;color:#a8ab9f;font:9px "Courier New",monospace}
+  .eyebrow{margin:0 0 auto;color:var(--muted);font:10px "Courier New",monospace;letter-spacing:.14em;text-transform:uppercase}
+  h1{margin:0;font:400 clamp(30px,5.2vw,62px)/1.02 Georgia,serif;letter-spacing:-.045em}
+  h1 em{color:var(--orange);font-style:italic}
+  .sub{margin:18px 0 0;color:var(--muted);font-size:13.5px;line-height:1.8;max-width:44ch}
+  .bar{width:52px;height:4px;margin-top:22px;background:var(--orange)}
+  h2{margin:0 0 22px;font:400 clamp(20px,2.8vw,32px)/1.15 Georgia,serif;letter-spacing:-.03em}
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:auto}
+  .col b{display:block;margin-bottom:9px;color:var(--orange);font:600 9px "Courier New",monospace;letter-spacing:.1em}
+  .col p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.75}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:auto}
+  .stat strong{display:block;font:400 clamp(28px,4.4vw,52px)/1 Georgia,serif}
+  .stat span{display:block;margin-top:8px;color:var(--muted);font:10px "Courier New",monospace}
+  .timeline{margin-top:auto;display:grid;gap:11px}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:baseline;padding-bottom:11px;border-bottom:1px solid var(--cool)}
+  .step:last-child{border-bottom:0}
+  .step i{color:var(--orange);font:600 10px "Courier New",monospace;font-style:normal}
+  .step p{margin:0;color:var(--muted);font-size:12.5px}
+  .step p b{color:var(--ink);font-weight:400}
+  .closing{align-items:center;justify-content:center;text-align:center}
+  .closing h1{max-width:20ch}
+  @media(max-width:700px){.cols,.stats{grid-template-columns:1fr;gap:14px}}
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <section class="slide">
+    <span class="num">01 / 06</span>
+    <p class="eyebrow">文化项目提案 / 2026</p>
+    <h1>城市在夜里<br /><em>才开始说话。</em></h1>
+    <p class="sub">一个关于夜间劳动者、深夜场所和城市节律的长期记录与展览计划。</p>
+    <div class="bar"></div>
+  </section>
+
+  <section class="slide">
+    <span class="num">02 / 06</span>
+    <p class="eyebrow">为什么现在做</p>
+    <h2>白天的城市已经被拍完了，<br />夜里的还没有。</h2>
+    <div class="cols">
+      <div class="col"><b>缺口</b><p>现有城市影像几乎都在日光下完成，夜间只剩霓虹与消费场景。</p></div>
+      <div class="col"><b>人</b><p>清洁、配送、值班、后厨、司机——维持城市运转的人在夜里最不被看见。</p></div>
+      <div class="col"><b>时机</b><p>夜间经济成为政策议题，但缺少可信的文化叙述。</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="num">03 / 06</span>
+    <p class="eyebrow">项目由三部分组成</p>
+    <h2>记录、展览、出版。</h2>
+    <div class="cols">
+      <div class="col"><b>01 记录</b><p>12 个月，跟随 20 位夜班工作者，形成影像与口述档案。</p></div>
+      <div class="col"><b>02 展览</b><p>把展厅调成夜间照度，观众在接近真实的光线里观看。</p></div>
+      <div class="col"><b>03 出版</b><p>一本可长期留存的画册，收录影像、访谈与城市夜间地图。</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="num">04 / 06</span>
+    <p class="eyebrow">规模</p>
+    <h2>一年，一座城，二十个人。</h2>
+    <div class="stats">
+      <div class="stat"><strong>12</strong><span>MONTHS OF FIELDWORK</span></div>
+      <div class="stat"><strong>20</strong><span>NIGHT WORKERS</span></div>
+      <div class="stat"><strong>03</strong><span>PUBLIC OUTCOMES</span></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="num">05 / 06</span>
+    <p class="eyebrow">时间线</p>
+    <h2>从记录到公开。</h2>
+    <div class="timeline">
+      <div class="step"><i>Q1</i><p><b>建立信任</b> — 联络夜间行业与个人，完成拍摄伦理与同意流程。</p></div>
+      <div class="step"><i>Q2–Q3</i><p><b>密集记录</b> — 影像、录音、随行笔记，每月一次内部审片。</p></div>
+      <div class="step"><i>Q4</i><p><b>编辑与设计</b> — 确定叙事结构，完成画册与展陈方案。</p></div>
+      <div class="step"><i>次年 Q1</i><p><b>公开</b> — 展览开幕，画册发行，城市夜间地图上线。</p></div>
+    </div>
+  </section>
+
+  <section class="slide closing">
+    <span class="num">06 / 06</span>
+    <h1>我们想让这座城市<br /><em>看见自己的夜晚。</em></h1>
+    <div class="bar"></div>
+  </section>
+
+</div>
+</body>
+</html>
