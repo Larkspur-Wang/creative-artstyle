@@ -9,6 +9,8 @@
 | pov-video-formula | POV 短视频 6 格公式 + 多段交付契约 | shanyue_内容生成（pov-video-workflows） |
 | generation-failure-recovery | 生成失败分类与降级 | shanyue_内容生成 生产日报 |
 | editorial-visual-system | 编辑部风格 UI / 卡片视觉系统 | Studio_ArtStyle + 小红书卡片 session |
+| particle-text-engine | 文字/主题 → 3D 点云粒子艺术 | 漂亮前端交互（particle-works） |
+| scrollytelling-map | d3 场景化叙事地图 / 数据故事 | 漂亮前端交互（world-anime-map） |
 
 ## 与 app 的关系
 
