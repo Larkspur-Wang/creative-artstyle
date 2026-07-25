@@ -54,7 +54,7 @@ import {
 const WORK_IDENTITY = {
   ownerUsername: "lark",
   spaceSlug: "beautiful-skills",
-  workSlug: "minimal-zine-poster",
+  workSlug: "creative-artstyle",
 };
 
 const isDevWork =
@@ -455,10 +455,27 @@ function App() {
 
         <main className="main-workspace">
           <section className="hero-row">
+            <div className="hero-art" aria-hidden="true">
+              <img src="./examples/hero/hero-art.png" alt="" />
+              <span className="hero-art-veil" />
+            </div>
             <ParticleField accent={cap.accent} />
             <div className="hero-copy">
               <p className="kicker">A SMALL STUDIO FOR BIG IDEAS <span>↗</span></p>
               <h2>Make the thing<br /><em>you can see.</em></h2>
+              <div className="hero-caps">
+                {capabilities.map((item) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    className={`hero-cap-chip ${capId === item.id ? "on" : ""}`}
+                    style={{ ["--chip" as string]: item.accent }}
+                    onClick={() => chooseCapability(item.id)}
+                  >
+                    <i />{item.label}
+                  </button>
+                ))}
+              </div>
             </div>
             <div className="hero-note">
               <p>五种能力，各有各的做法。<br />选一个，给它一句话，剩下的交给它。</p>
